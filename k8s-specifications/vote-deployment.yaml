@@ -2,21 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: vote
-  name: vote
+    app: vote2
+  name: vote2
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: vote
+      app: vote2
   template:
     metadata:
       labels:
-        app: vote
+        app: vote2
     spec:
       containers:
       - image: dockersamples/examplevotingapp_vote:before
-        name: vote
+        name: vote2
         ports:
         - containerPort: 80
-          name: vote
+          name: vote2
