@@ -2,27 +2,27 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: redis
-  name: redis
+    app: redis2
+  name: redis2
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: redis
+      app: redis2
   template:
     metadata:
       labels:
-        app: redis
+        app: redis2
     spec:
       containers:
-      - image: redis:alpine
-        name: redis
+      - image: redis2:alpine
+        name: redis2
         ports:
         - containerPort: 6379
-          name: redis
+          name: redis2
         volumeMounts:
         - mountPath: /data
-          name: redis-data
+          name: redis2-data
       volumes:
-      - name: redis-data
+      - name: redis2-data
         emptyDir: {} 
